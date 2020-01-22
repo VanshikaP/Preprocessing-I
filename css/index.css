@@ -16,6 +16,20 @@
   font-display: swap;
   src: local('Montserrat Regular'), local('Montserrat-Regular'), url(https://fonts.gstatic.com/s/montserrat/v14/JTUSjIg1_i6t8kCHKm459Wlhzg.ttf) format('truetype');
 }
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local('Montserrat Medium'), local('Montserrat-Medium'), url(https://fonts.gstatic.com/s/montserrat/v14/JTURjIg1_i6t8kCHKm45_ZpC3gnD-w.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Montserrat Bold'), local('Montserrat-Bold'), url(https://fonts.gstatic.com/s/montserrat/v14/JTURjIg1_i6t8kCHKm45_dJE3gnD-w.ttf) format('truetype');
+}
 .headingfont {
   font-family: 'Alata', sans-serif;
   font-weight: bold;
@@ -189,10 +203,15 @@ header nav {
 header nav a {
   margin: 2% 0% 2% 5%;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: medium;
 }
 header nav a:hover {
   color: crimson;
+}
+@media (max-width: 500px) {
+  header nav a {
+    margin: 2% 0;
+  }
 }
 @media (max-width: 500px) {
   header nav {
@@ -319,6 +338,7 @@ header .about .info button {
 }
 #portfolio .box2 table th {
   text-align: left;
+  font-weight: bold;
 }
 #portfolio .box2 table td,
 #portfolio .box2 table th {
