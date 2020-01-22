@@ -3,6 +3,20 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@import url('https://fonts.googleapis.com/css?family=Alata|Montserrat&display=swap');
+
+//Mixins
+.headingfont {
+	font-family: 'Alata', sans-serif;
+	font-weight: bold;
+	color: midnightblue;
+}
+.regfont {
+	font-family: 'Montserrat', sans-serif;
+	color: black;
+}
+
+
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -22,7 +36,6 @@ time, mark, audio, video {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
-	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -50,10 +63,37 @@ table {
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
+	max-width: 100%;
 }
 
 html, body {
     height: 100%;
 }
 
+// Code Begins Here
+
+body{
+	width: 90%;
+	margin: 2% auto;
+}
+
+//Header Styles
+header{
+	nav{
+		display: flex;
+		justify-content: flex-end;
+
+		a{
+			margin: 2% 0% 2% 5%;
+			text-decoration: none;
+			font-weight: bold;
+			.regfont();
+
+			&:hover{
+				background-color: lightgray;
+				padding: 2%;
+			}
+		}
+	}
+}
