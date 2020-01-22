@@ -24,6 +24,16 @@
 .regfont {
   font-family: 'Montserrat', sans-serif;
   color: black;
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+.rowflex {
+  display: flex;
+  justify-content: space-between;
+}
+.columnflex {
+  display: flex;
+  flex-direction: column;
 }
 html,
 body,
@@ -156,10 +166,21 @@ table {
 html,
 body {
   height: 100%;
+  font-size: 62.5%;
 }
 body {
   width: 90%;
-  margin: 2% auto;
+  margin: auto;
+}
+p,
+a,
+table,
+button,
+ul {
+  font-family: 'Montserrat', sans-serif;
+  color: black;
+  font-size: 1.6rem;
+  line-height: 1.5;
 }
 header nav {
   display: flex;
@@ -169,9 +190,76 @@ header nav a {
   margin: 2% 0% 2% 5%;
   text-decoration: none;
   font-weight: bold;
-  font-family: 'Montserrat', sans-serif;
-  color: black;
 }
 header nav a:hover {
   color: crimson;
+}
+@media (max-width: 500px) {
+  header nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: lightgray;
+    margin: 0;
+    margin-bottom: 2%;
+  }
+}
+header .about {
+  background-color: #eeecec;
+  padding: 5% 2% ;
+  display: flex;
+  flex-direction: column;
+}
+header .about .profile {
+  border-bottom: 1px solid darkgray;
+}
+header .about .profile .profile-pic {
+  width: 30%;
+}
+@media (max-width: 500px) {
+  header .about .profile .profile-pic {
+    width: 50%;
+  }
+}
+header .about .profile h1 {
+  font-family: 'Alata', sans-serif;
+  font-weight: bold;
+  color: midnightblue;
+  font-size: 3rem;
+  margin: 2% 0;
+}
+header .about .profile h3 {
+  font-family: 'Alata', sans-serif;
+  font-weight: bold;
+  color: midnightblue;
+  font-size: 2rem;
+  margin-bottom: 2%;
+}
+@media (max-width: 500px) {
+  header .about .profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+header .about .info {
+  margin: 0;
+  padding: 2% 0 0 0;
+}
+header .about .info button {
+  font-family: 'Alata', sans-serif;
+  font-weight: bold;
+  color: midnightblue;
+  font-size: 2rem;
+  background-color: slategray;
+  color: white;
+  border-radius: 5px;
+  padding: 1%;
+  margin: 2% 0 0 0;
+}
+@media (max-width: 500px) {
+  header .about {
+    align-items: center;
+    text-align: center;
+  }
 }

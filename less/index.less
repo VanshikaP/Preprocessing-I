@@ -7,6 +7,15 @@
 
 //Variables
 @hover-color: crimson;
+@highlight-color: rgb(238, 236, 236);
+@tablet: 800px;
+@mobile: 500px;
+@background: lightgray;
+@buttonbg: slategray;
+@h1size: 3rem;
+@h2size: 2.5rem;
+@h3size: 2rem;
+
 //Mixins
 .headingfont {
 	font-family: 'Alata', sans-serif;
@@ -16,6 +25,16 @@
 .regfont {
 	font-family: 'Montserrat', sans-serif;
 	color: black;
+	font-size: 1.6rem;
+	line-height: 1.5;
+}
+.rowflex{
+	display: flex;
+	justify-content: space-between;
+}
+.columnflex{
+	display: flex;
+	flex-direction: column;
 }
 
 
@@ -70,14 +89,19 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	font-size: 62.5%;
 }
 
 // Code Begins Here
 
 body{
 	width: 90%;
-	margin: 2% auto;
+	margin: auto;
+}
+
+p, a, table, button, ul{
+	.regfont();
 }
 
 //Header Styles
@@ -90,11 +114,83 @@ header{
 			margin: 2% 0% 2% 5%;
 			text-decoration: none;
 			font-weight: bold;
-			.regfont();
 
 			&:hover{
 				color: @hover-color;
+			}//this closes hover a
+
+		}//this closes a
+
+		@media (max-width : @mobile){
+			.columnflex();
+			align-items: center;
+			background-color: @background;
+			margin: 0;
+			margin-bottom: 2%;
+			
+
+		}//this closes media nav
+
+	}//this closes nav
+
+	.about{
+		background-color: @highlight-color;
+		padding: 5% 2% ;
+		.columnflex();
+		
+		.profile{
+			border-bottom: 1px solid darkgray;
+			
+			.profile-pic{
+				width: 30%;
+				
+				@media (max-width: @mobile){
+					width: 50%;
+				}//this ends media profile-pic
+	
+			}//this ends profile pic
+	
+			h1{
+				.headingfont();
+				font-size: @h1size;
+				margin: 2% 0;
+			}// this ends h1
+	
+			h3{
+				.headingfont();
+				font-size: @h3size;
+				margin-bottom: 2%;
+			}// this closes h3
+
+			@media (max-width: @mobile){
+				.columnflex();
+				align-items: center;
 			}
-		}
-	}
-}
+
+		}//this closes profile
+		
+		.info{
+			margin: 0;
+			padding: 2% 0 0 0;
+
+			button{
+				.headingfont();
+				font-size: @h3size;
+				background-color: @buttonbg;
+				color: white;
+				border-radius: 5px;
+				padding: 1%;
+				margin: 2% 0 0 0;
+			}//this closes button
+
+		}//this closes info
+
+		@media (max-width: @mobile){
+			align-items: center;
+			text-align: center;
+		}//this closes media about
+
+	}//this closes about
+
+
+}//this closes header
