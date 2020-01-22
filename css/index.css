@@ -176,7 +176,7 @@ p,
 a,
 table,
 button,
-ul {
+li {
   font-family: 'Montserrat', sans-serif;
   color: black;
   font-size: 1.6rem;
@@ -207,6 +207,7 @@ header nav a:hover {
 header .about {
   background-color: #eeecec;
   padding: 5% 2% ;
+  margin: 5% auto;
   display: flex;
   flex-direction: column;
 }
@@ -233,6 +234,7 @@ header .about .profile h3 {
   font-weight: bold;
   color: midnightblue;
   font-size: 2rem;
+  font-weight: normal;
   margin-bottom: 2%;
 }
 @media (max-width: 500px) {
@@ -240,6 +242,12 @@ header .about .profile h3 {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+  header .about .profile .break {
+    display: none;
+  }
+  header .about .profile .text {
+    white-space: pre;
   }
 }
 header .about .info {
@@ -254,7 +262,7 @@ header .about .info button {
   background-color: slategray;
   color: white;
   border-radius: 5px;
-  padding: 1%;
+  padding: 1% 3%;
   margin: 2% 0 0 0;
 }
 @media (max-width: 500px) {
@@ -262,4 +270,69 @@ header .about .info button {
     align-items: center;
     text-align: center;
   }
+}
+#portfolio {
+  padding: 2% 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+#portfolio h2 {
+  font-family: 'Alata', sans-serif;
+  font-weight: bold;
+  color: midnightblue;
+  font-size: 2.5rem;
+  margin-bottom: 3%;
+}
+#portfolio h3 {
+  font-family: 'Alata', sans-serif;
+  font-weight: bold;
+  color: midnightblue;
+  font-size: 2rem;
+  margin-bottom: 3%;
+}
+#portfolio ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+#portfolio ul li {
+  border: 1px solid lightgray;
+  font-size: 1.8rem;
+  padding: 3%;
+}
+#portfolio .box {
+  width: 48%;
+  margin-bottom: 5%;
+}
+@media (max-width: 500px) {
+  #portfolio .box {
+    width: 100%;
+  }
+}
+#portfolio .box2 {
+  width: 100%;
+}
+#portfolio .box2 table {
+  width: 100%;
+}
+#portfolio .box2 table th {
+  text-align: left;
+}
+#portfolio .box2 table td,
+#portfolio .box2 table th {
+  padding: 1% 2%;
+}
+#portfolio .box2 table tr {
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+}
+#portfolio .box2 table tr:nth-child(odd) {
+  background-color: #eeecec;
+}
+footer {
+  margin: 5% 0;
+  text-align: center;
+  font-size: 1rem;
 }

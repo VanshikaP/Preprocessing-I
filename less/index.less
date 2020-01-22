@@ -100,7 +100,7 @@ body{
 	margin: auto;
 }
 
-p, a, table, button, ul{
+p, a, table, button, li{
 	.regfont();
 }
 
@@ -136,6 +136,7 @@ header{
 	.about{
 		background-color: @highlight-color;
 		padding: 5% 2% ;
+		margin: 5% auto;
 		.columnflex();
 		
 		.profile{
@@ -159,12 +160,21 @@ header{
 			h3{
 				.headingfont();
 				font-size: @h3size;
+				font-weight: normal;
 				margin-bottom: 2%;
 			}// this closes h3
 
 			@media (max-width: @mobile){
 				.columnflex();
 				align-items: center;
+				
+				.break{
+					display: none;
+				}
+				
+				.text{
+					white-space: pre;
+				}
 			}
 
 		}//this closes profile
@@ -179,7 +189,7 @@ header{
 				background-color: @buttonbg;
 				color: white;
 				border-radius: 5px;
-				padding: 1%;
+				padding: 1% 3%;
 				margin: 2% 0 0 0;
 			}//this closes button
 
@@ -194,3 +204,76 @@ header{
 
 
 }//this closes header
+
+//Content Styles Here
+
+#portfolio{
+	padding: 2% 0;
+	.rowflex();
+	flex-wrap: wrap;
+			
+	h2{
+		.headingfont();
+		font-size: @h2size;
+		margin-bottom: 3%;
+	}//this closes h2
+
+	h3{
+		.headingfont();
+		font-size: @h3size;
+		margin-bottom: 3%;
+	}//this closes h3
+
+	ul{
+		.columnflex();
+		justify-content: space-between;
+		width: 100%;
+
+		li{
+			border: 1px solid lightgray;
+			font-size: 1.8rem;
+			padding: 3%;
+		}//this closes li
+
+	}//this closes ul
+
+	.box{
+		width: 48%;
+		margin-bottom: 5%;
+
+		@media (max-width: @mobile){
+			width: 100%;
+		}
+
+	}//this closes box1
+
+	.box2{
+		width: 100%;
+
+		table{
+			width: 100%;
+			th{
+				text-align: left;
+			}//this closes table header
+
+			td, th{
+				padding: 1% 2%;
+			}
+
+			tr{
+				border-top :1px solid lightgray;
+				border-bottom: 1px solid lightgray;
+			}
+
+			tr:nth-child(odd){
+				background-color: @highlight-color;
+			}
+		}//this closes table
+	}//this closes box2
+}//this closes portfolio
+
+footer{
+	margin: 5% 0;
+	text-align: center;
+	font-size: 1rem;
+}//this closes footer
