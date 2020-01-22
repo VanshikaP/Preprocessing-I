@@ -5,6 +5,8 @@
 */
 @import url('https://fonts.googleapis.com/css?family=Alata|Montserrat&display=swap');
 
+//Variables
+@hover-color: crimson;
 //Mixins
 .headingfont {
 	font-family: 'Alata', sans-serif;
@@ -91,8 +93,7 @@ header{
 			.regfont();
 
 			&:hover{
-				background-color: lightgray;
-				padding: 2%;
+				color: @hover-color;
 			}
 		}
 	}
