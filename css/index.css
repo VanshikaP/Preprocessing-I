@@ -49,6 +49,9 @@
   display: flex;
   flex-direction: column;
 }
+.shadow {
+  text-shadow: 0.4rem 0.4rem 0.4rem rgba(124, 124, 124, 0.63);
+}
 html,
 body,
 div,
@@ -182,9 +185,10 @@ body {
   height: 100%;
   font-size: 62.5%;
 }
-body {
-  width: 90%;
-  margin: auto;
+.container {
+  background-image: linear-gradient(to bottom right, lightblue, mediumslateblue);
+  padding: 0 5%;
+  margin: 0;
 }
 p,
 a,
@@ -201,9 +205,11 @@ header nav {
   justify-content: flex-end;
 }
 header nav a {
-  margin: 2% 0% 2% 5%;
+  margin: 2% 0% 0% 5%;
   text-decoration: none;
-  font-weight: medium;
+  font-size: 2rem;
+  font-weight: 500;
+  text-shadow: 0.4rem 0.4rem 0.4rem rgba(124, 124, 124, 0.63);
 }
 header nav a:hover {
   color: crimson;
@@ -224,7 +230,7 @@ header nav a:hover {
   }
 }
 header .about {
-  background-color: #eeecec;
+  background-color: rgba(238, 236, 236, 0.397);
   padding: 5% 2% ;
   margin: 5% auto;
   display: flex;
@@ -247,6 +253,7 @@ header .about .profile h1 {
   color: midnightblue;
   font-size: 3rem;
   margin: 2% 0;
+  text-shadow: 0.4rem 0.4rem 0.4rem rgba(124, 124, 124, 0.63);
 }
 header .about .profile h3 {
   font-family: 'Alata', sans-serif;
@@ -302,6 +309,7 @@ header .about .info button {
   color: midnightblue;
   font-size: 2.5rem;
   margin-bottom: 3%;
+  text-shadow: 0.4rem 0.4rem 0.4rem rgba(124, 124, 124, 0.63);
 }
 #portfolio h3 {
   font-family: 'Alata', sans-serif;
@@ -309,6 +317,7 @@ header .about .info button {
   color: midnightblue;
   font-size: 2rem;
   margin-bottom: 3%;
+  text-shadow: 0.4rem 0.4rem 0.4rem rgba(124, 124, 124, 0.63);
 }
 #portfolio ul {
   display: flex;
@@ -317,7 +326,7 @@ header .about .info button {
   width: 100%;
 }
 #portfolio ul li {
-  border: 1px solid lightgray;
+  border: 1px solid rgba(236, 236, 236, 0.336);
   font-size: 1.8rem;
   padding: 3%;
 }
@@ -344,15 +353,11 @@ header .about .info button {
 #portfolio .box2 table th {
   padding: 1% 2%;
 }
-#portfolio .box2 table tr {
-  border-top: 1px solid lightgray;
-  border-bottom: 1px solid lightgray;
-}
 #portfolio .box2 table tr:nth-child(odd) {
-  background-color: #eeecec;
+  background-color: rgba(236, 236, 236, 0.336);
 }
 footer {
-  margin: 5% 0;
+  padding: 5% 0;
   text-align: center;
   font-size: 1rem;
 }

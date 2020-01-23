@@ -7,7 +7,7 @@
 
 //Variables
 @hover-color: crimson;
-@highlight-color: rgb(238, 236, 236);
+@highlight-color: rgba(238, 236, 236, 0.397);
 @tablet: 800px;
 @mobile: 500px;
 @background: lightgray;
@@ -15,6 +15,9 @@
 @h1size: 3rem;
 @h2size: 2.5rem;
 @h3size: 2rem;
+@linecolor: darkgray;
+@bordercolor: rgba(236, 236, 236, 0.336);
+@transparentbg: rgba(236, 236, 236, 0.336);
 
 //Mixins
 .headingfont {
@@ -35,6 +38,9 @@
 .columnflex{
 	display: flex;
 	flex-direction: column;
+}
+.shadow{
+	text-shadow: 0.4rem 0.4rem 0.4rem rgba(124, 124, 124, 0.63);
 }
 
 
@@ -95,14 +101,17 @@ html, body {
 
 // Code Begins Here
 
-body{
-	width: 90%;
-	margin: auto;
+.container{
+	background-image: linear-gradient(to bottom right, lightblue, mediumslateblue);
+	padding: 0 5%;
+	margin: 0;
+	// border: 5px dashed blue;
 }
 
 p, a, table, button, li{
 	.regfont();
 }
+
 
 //Header Styles
 header{
@@ -111,9 +120,11 @@ header{
 		justify-content: flex-end;
 
 		a{
-			margin: 2% 0% 2% 5%;
+			margin: 2% 0% 0% 5%;
 			text-decoration: none;
-			font-weight: medium;
+			font-size: @h3size;
+			font-weight: 500;
+			.shadow();
 
 			&:hover{
 				color: @hover-color;
@@ -144,7 +155,7 @@ header{
 		.columnflex();
 		
 		.profile{
-			border-bottom: 1px solid darkgray;
+			border-bottom: 1px solid @linecolor;
 			
 			.profile-pic{
 				width: 30%;
@@ -159,6 +170,7 @@ header{
 				.headingfont();
 				font-size: @h1size;
 				margin: 2% 0;
+				.shadow();
 			}// this ends h1
 	
 			h3{
@@ -220,12 +232,14 @@ header{
 		.headingfont();
 		font-size: @h2size;
 		margin-bottom: 3%;
+		.shadow();
 	}//this closes h2
 
 	h3{
 		.headingfont();
 		font-size: @h3size;
 		margin-bottom: 3%;
+		.shadow();
 	}//this closes h3
 
 	ul{
@@ -234,7 +248,7 @@ header{
 		width: 100%;
 
 		li{
-			border: 1px solid lightgray;
+			border: 1px solid @bordercolor;
 			font-size: 1.8rem;
 			padding: 3%;
 		}//this closes li
@@ -265,20 +279,15 @@ header{
 				padding: 1% 2%;
 			}
 
-			tr{
-				border-top :1px solid lightgray;
-				border-bottom: 1px solid lightgray;
-			}
-
 			tr:nth-child(odd){
-				background-color: @highlight-color;
+				background-color: @transparentbg;
 			}
 		}//this closes table
 	}//this closes box2
 }//this closes portfolio
 
 footer{
-	margin: 5% 0;
+	padding: 5% 0;
 	text-align: center;
 	font-size: 1rem;
 }//this closes footer
