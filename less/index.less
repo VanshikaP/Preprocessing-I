@@ -3,6 +3,47 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@import url('https://fonts.googleapis.com/css?family=Alata|Montserrat:400,500,700&display=swap');
+
+//Variables
+@hover-color: crimson;
+@highlight-color: rgba(238, 236, 236, 0.397);
+@tablet: 800px;
+@mobile: 500px;
+@background: lightgray;
+@buttonbg: slategray;
+@h1size: 3rem;
+@h2size: 2.5rem;
+@h3size: 2rem;
+@linecolor: darkgray;
+@bordercolor: rgba(236, 236, 236, 0.336);
+@transparentbg: rgba(236, 236, 236, 0.336);
+
+//Mixins
+.headingfont {
+	font-family: 'Alata', sans-serif;
+	font-weight: bold;
+	color: midnightblue;
+}
+.regfont {
+	font-family: 'Montserrat', sans-serif;
+	color: black;
+	font-size: 1.6rem;
+	line-height: 1.5;
+}
+.rowflex{
+	display: flex;
+	justify-content: space-between;
+}
+.columnflex{
+	display: flex;
+	flex-direction: column;
+}
+.shadow{
+	text-shadow: 0.4rem 0.4rem 0.4rem rgba(124, 124, 124, 0.63);
+}
+
+
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -22,7 +63,6 @@ time, mark, audio, video {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
-	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -50,10 +90,204 @@ table {
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
+	max-width: 100%;
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	font-size: 62.5%;
 }
 
+// Code Begins Here
+
+.container{
+	background-image: linear-gradient(to bottom right, lightblue, mediumslateblue);
+	padding: 0 5%;
+	margin: 0;
+	// border: 5px dashed blue;
+}
+
+p, a, table, button, li{
+	.regfont();
+}
+
+
+//Header Styles
+header{
+	nav{
+		display: flex;
+		justify-content: flex-end;
+
+		a{
+			margin: 2% 0% 0% 5%;
+			text-decoration: none;
+			font-size: @h3size;
+			font-weight: 500;
+			.shadow();
+
+			&:hover{
+				color: @hover-color;
+			}//this closes hover a
+
+			@media(max-width:@mobile){
+				margin: 2% 0;
+			}
+
+		}//this closes a
+
+		@media (max-width : @mobile){
+			.columnflex();
+			align-items: center;
+			background-color: @background;
+			margin: 0;
+			margin-bottom: 2%;
+			
+
+		}//this closes media nav
+
+	}//this closes nav
+
+	.about{
+		background-color: @highlight-color;
+		padding: 5% 2% ;
+		margin: 5% auto;
+		.columnflex();
+		
+		.profile{
+			border-bottom: 1px solid @linecolor;
+			
+			.profile-pic{
+				width: 30%;
+				
+				@media (max-width: @mobile){
+					width: 50%;
+				}//this ends media profile-pic
+	
+			}//this ends profile pic
+	
+			h1{
+				.headingfont();
+				font-size: @h1size;
+				margin: 2% 0;
+				.shadow();
+			}// this ends h1
+	
+			h3{
+				.headingfont();
+				font-size: @h3size;
+				font-weight: normal;
+				margin-bottom: 2%;
+			}// this closes h3
+
+			@media (max-width: @mobile){
+				.columnflex();
+				align-items: center;
+				
+				.break{
+					display: none;
+				}
+				
+				.text{
+					white-space: pre;
+				}
+			}
+
+		}//this closes profile
+		
+		.info{
+			margin: 0;
+			padding: 2% 0 0 0;
+
+			button{
+				.headingfont();
+				font-size: @h3size;
+				background-color: @buttonbg;
+				color: white;
+				border-radius: 5px;
+				padding: 1% 3%;
+				margin: 2% 0 0 0;
+			}//this closes button
+
+		}//this closes info
+
+		@media (max-width: @mobile){
+			align-items: center;
+			text-align: center;
+		}//this closes media about
+
+	}//this closes about
+
+
+}//this closes header
+
+//Content Styles Here
+
+#portfolio{
+	padding: 2% 0;
+	.rowflex();
+	flex-wrap: wrap;
+			
+	h2{
+		.headingfont();
+		font-size: @h2size;
+		margin-bottom: 3%;
+		.shadow();
+	}//this closes h2
+
+	h3{
+		.headingfont();
+		font-size: @h3size;
+		margin-bottom: 3%;
+		.shadow();
+	}//this closes h3
+
+	ul{
+		.columnflex();
+		justify-content: space-between;
+		width: 100%;
+
+		li{
+			border: 1px solid @bordercolor;
+			font-size: 1.8rem;
+			padding: 3%;
+		}//this closes li
+
+	}//this closes ul
+
+	.box{
+		width: 48%;
+		margin-bottom: 5%;
+
+		@media (max-width: @mobile){
+			width: 100%;
+		}
+
+	}//this closes box1
+
+	.box2{
+		width: 100%;
+
+		table{
+			width: 100%;
+			th{
+				text-align: left;
+				font-weight: bold;
+			}//this closes table header
+
+			td, th{
+				padding: 1% 2%;
+			}
+
+			tr:nth-child(odd){
+				background-color: @transparentbg;
+			}
+		}//this closes table
+	}//this closes box2
+}//this closes portfolio
+
+footer{
+	padding: 5% 0;
+	text-align: center;
+	font-size: 1rem;
+}//this closes footer
